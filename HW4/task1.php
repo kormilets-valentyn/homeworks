@@ -36,3 +36,5 @@ return $result;
 }
 $a = arrayString($string_array);
 echo "\n" . ($a);
+
+
