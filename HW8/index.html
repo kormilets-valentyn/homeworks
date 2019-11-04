@@ -3,21 +3,24 @@
     <head>
         <meta charset="utf-8">
         <title>Формы HTML</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
 <body>
 <p><b>Введите данные:</b></p>
 <form name="form" method="post" action="function.php">
-    Ваше имя <input type="text" name="name" placeholder="Введите имя" required>
-    <p>Ваш e-mail <input type="email" name="mail" placeholder="Введите e-mail" required></p>
-    Какую ОС предпочитаете?<br/>
-    <p><input type="radio" name="radio" value="Windows" required> Windows<br/>
-    <input type="radio" name="radio" value="Linux" required> Linux<br/>
-    <input type="radio" name="radio" value="MacOS" required> MacOS<br/></p>
-    <p><b>Проверка FizzBuzz:</b></p>
-    <p> Введите Fizz:    <input type="number" name="fizz" placeholder="fizz" required>
-        Введите Buzz:    <input type="number" name="buzz" placeholder="buzz" required>
-        Введите Num:    <input type="number" name="num" placeholder="num" required></p>
-    <input type="submit" value="Отправляем"><br/>
+    <div class="form-group">
+            <p>Ваше имя <input type="text" name="name" placeholder="Введите имя" required>
+            Ваш e-mail <input type="email" name="mail" placeholder="Введите e-mail" required></p>
+            Какую ОС предпочитаете?<br/>
+            <p><input type="radio" name="radio" value="Windows" required> Windows<br/>
+            <input type="radio" name="radio" value="Linux" required> Linux<br/>
+            <input type="radio" name="radio" value="MacOS" required> MacOS<br/></p>
+            <p><b>Проверка FizzBuzz:</b></p>
+            <p> Введите Fizz:    <input type="number" name="fizz" placeholder="fizz">
+            Введите Buzz:    <input type="number" name="buzz" placeholder="buzz">
+            Введите Num:    <input type="number" name="num" placeholder="num"></p>
+            <button type="submit" class="btn btn-success">Отправка</button>
+    </div>
 </form>
 </body>
 </html>
