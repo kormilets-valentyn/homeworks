@@ -1,0 +1,2 @@
+select title, year, fullname, age from films inner join actor_id on films.id = actor_id.film_id INNER JOIN actors on actors.id = actor_id.actor where actors.fullname= 'Leonardo DiCaprio' order by title;
+SELECT fullname from films inner join actor_id on films.id = actor_id.film_id INNER JOIN actors on actor_id.actor = actors.id where title = 'Titanic';
