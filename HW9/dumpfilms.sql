@@ -74,11 +74,9 @@ DROP TABLE IF EXISTS `directors`;
 CREATE TABLE `directors` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `fullname` varchar(255) NOT NULL,
-  `age` int(3) NOT NULL,
-  `gender` enum('m','f') DEFAULT NULL,
-  `nationality` varchar(255) DEFAULT '',
+  `film_id` int(5) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,6 +85,7 @@ CREATE TABLE `directors` (
 
 LOCK TABLES `directors` WRITE;
 /*!40000 ALTER TABLE `directors` DISABLE KEYS */;
+INSERT INTO `directors` VALUES (1,'James Cameron',1),(2,'Lourens Bender',2),(3,'Alberto Grimaldi',3),(4,'Bob and Harvy Wainshtein',3),(5,'Martin Skorseze',4),(6,'Frensis fon Coppola',5),(7,'Arnon Milchen',6),(8,'Dag Laiman',7),(9,'Martin Bragman',8);
 /*!40000 ALTER TABLE `directors` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -125,4 +124,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-10 23:58:17
+-- Dump completed on 2019-11-12  0:01:01
