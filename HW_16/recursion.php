@@ -3,7 +3,7 @@ $a = [1,1,1,2,2,3];
 function summ($x, $index=0){
     if (count($x) === $index+1){
         if ($x[$index] % 2 !== 0){
-            return False;
+            return 0;
         }
         else return $x[$index];
     }
