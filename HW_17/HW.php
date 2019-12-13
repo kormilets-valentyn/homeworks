@@ -1,10 +1,10 @@
 <?php
 interface Abc{                                                              //Liskov substitution principle
-    public function maxSpeed();
     public function maxMileage();
     public function countWheels();
+
 }
-abstract class Vehicles                                                     //Open/Closed principle
+abstract class Vehicles                                                 //Open/Closed principle
 {                                                                           //Dependency Inversion principle
     protected $power;
     protected $countWheels;
@@ -12,9 +12,13 @@ abstract class Vehicles                                                     //Op
         $this->power=$power;
         $this->countWheels= $countWheels;
     }
+    abstract public function maxSpeed();
+    public function showSpeed(){
+        $this->maxSpeed();
+    }
 }
 
-class Motorcycle extends Vehicles implements Abc                            //Liskov substitution principle
+class Motorcycle extends Vehicles implements Abc                        //Liskov substitution principle
 {
     private $countGear;
     private $fuel;
@@ -26,7 +30,7 @@ class Motorcycle extends Vehicles implements Abc                            //Li
         $this->fuel=$fuel;
     }
     public function maxSpeed(){
-        return $this->countGear * $this->power;
+        echo $this->countGear * $this->power;
     }
     public function maxMileage(){
         return $this->fuel * 10;
@@ -53,7 +57,8 @@ class Motorcycle extends Vehicles implements Abc                            //Li
 
 }
 $a = new Motorcycle(70,2,4,15);
-echo 'Max speed = ' . $a->maxSpeed();
+echo 'Max speed = ';
+$a->maxSpeed();
 echo '<br/>';
 echo $a->countWheels();
 echo '<br/>';
@@ -67,6 +72,9 @@ class Scooter extends Vehicles {
     {
         parent::__construct($power, $countWheels);
         $this->trunk=$trunk;
+    }
+    public function maxSpeed(){
+        echo $this->power;
     }
     public function trunkVolume(){
         return 'Volume = ' . $this->trunk;
@@ -111,3 +119,13 @@ echo '<br/>';
 echo $atv1->countWheels();
 echo '<br/>';
 echo $atv1->trunkVol();
+echo '<br/>';
+class polClass {
+    public function render (Vehicles $speed){
+        $speed->showSpeed();
+    }
+}
+$aaa = new Motorcycle(111,2,4,15);
+$d = new polClass();
+echo 'Полиморфизм: ';
+$d->render($aaa);
