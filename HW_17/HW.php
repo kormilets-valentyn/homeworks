@@ -99,7 +99,7 @@ class ATV extends Vehicles implements Abc                                   //Li
         $this->newTrunk=$newTrunk;
     }
     public function maxSpeed(){
-        return $this->power * 1.5;
+        echo $this->power * 1.5;
     }
     public function maxMileage(){
         return 'Max Mileage = 100km';
@@ -112,7 +112,8 @@ class ATV extends Vehicles implements Abc                                   //Li
     }
 }
 $atv1 = new ATV (90, 4, 40);
-echo 'Max speed = ' . $atv1->maxSpeed();
+echo 'Max speed = ';
+$atv1->maxSpeed();
 echo '<br/>';
 echo $atv1->maxMileage();
 echo '<br/>';
@@ -126,6 +127,10 @@ class polClass {
     }
 }
 $aaa = new Motorcycle(111,2,4,15);
+$bbb = new ATV(60,3,10);
 $d = new polClass();
 echo 'Полиморфизм: ';
 $d->render($aaa);
+echo " ";
+$d->render($bbb);
+
