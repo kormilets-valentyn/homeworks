@@ -1,5 +1,4 @@
 <?php
-echo "Vehicles include";
 abstract class Vehicles                                                 //Open/Closed principle
 {                                                                           //Dependency Inversion principle
     protected $power;
@@ -10,10 +9,8 @@ abstract class Vehicles                                                 //Open/C
     }
     abstract public function maxSpeed();
     public function showSpeed(){
-        $this->maxSpeed();
+        return $this->maxSpeed();
     }
 }
-echo '<br/>' . '______________________' . '<br/>';
-new Motorcycle;
 
 

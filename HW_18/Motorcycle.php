@@ -1,7 +1,5 @@
 <?php
-echo "Motorcycle include";
-echo '<br/>';
-class Motorcycle extends Vehicles implements Abc                        //Liskov substitution principle
+class Motorcycle extends Vehicles implements Abc
 {
     private $countGear;
     private $fuel;
@@ -39,13 +37,3 @@ class Motorcycle extends Vehicles implements Abc                        //Liskov
     }
 
 }
-$a = new Motorcycle(70,2,4,15);
-echo 'Max speed = ';
-$a->maxSpeed();
-echo '<br/>';
-echo $a->countWheels();
-echo '<br/>';
-echo $a->maxMileage();
-echo '<br/>' . '______________________' . '<br/>';
-
-new Scooter();

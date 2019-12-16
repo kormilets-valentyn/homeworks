@@ -1,7 +1,5 @@
 <?php
-echo "ATV include";
-echo '<br/>';
-class ATV extends Vehicles implements Abc                                   //Liskov substitution principle
+class ATV extends Vehicles implements Abc
 {
     public $newTrunk;
     public function __construct($power, $countWheels, $newTrunk)
@@ -22,14 +20,3 @@ class ATV extends Vehicles implements Abc                                   //Li
         return $this->newTrunk * 2;
     }
 }
-$atv1 = new ATV (90, 4, 40);
-echo 'Max speed = ';
-$atv1->maxSpeed();
-echo '<br/>';
-echo $atv1->maxMileage();
-echo '<br/>';
-echo $atv1->countWheels();
-echo '<br/>';
-echo $atv1->trunkVol();
-echo '<br/>' . '______________________' . '<br/>';
-new polClass();

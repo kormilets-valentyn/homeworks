@@ -1,8 +1,6 @@
 <?php
-interface Abc{                                                              //Liskov substitution principle
+interface Abc{
     public function maxMileage();
     public function countWheels();
 
 }
-echo 'Abc include';
-echo '<br/>';
