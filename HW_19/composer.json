@@ -1,0 +1,16 @@
+{
+    "name": "v_kormilets/mvc",
+    "type": "project",
+    "authors": [
+        {
+            "name": "valentyn",
+            "email": "v.kormilets@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "require": {}
+}
