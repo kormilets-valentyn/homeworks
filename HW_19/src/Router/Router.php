@@ -32,7 +32,6 @@ class Router
                 if (file_exists($controllerFile)){
                     require_once ($controllerFile);
                 }
-                else echo "File not found";
                 $controllerObject = new $controllerName;
                 $controllerObject -> $actionName();
 
@@ -47,7 +46,7 @@ class Router
         {
             return true;
         }
-        else echo "This page is unavailable!";
+        else require_once ($_SERVER['DOCUMENT_ROOT'] . '/src/view/errors.php');
         return true;
     }
 }
