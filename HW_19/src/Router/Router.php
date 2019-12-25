@@ -1,12 +1,12 @@
 <?php
-namespace src\router;
-require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
+namespace Router;
+
 class Router
 {
     protected $routes = [];
 
     public function __construct(){
-        $arr = require 'src/config/route.php';
+        $arr = require 'src/Config/route.php';
         foreach ($arr as $key => $value){
             $this->add($key, $value);
         }
@@ -14,16 +14,12 @@ class Router
     private function add($route, $par)
     {
         return $this->routes[$route] = $par;
-//        var_dump ($route);
-//        var_dump ($par);
-
     }
 
     public function match()
     {
         if (!empty($_SERVER['REQUEST_URI'])){
         $uri = trim($_SERVER['REQUEST_URI'],'/');
-//        echo $uri;
         }
         foreach ($this->routes as $key => $value){
             $key = '#^'.$key.'$#';
@@ -32,12 +28,7 @@ class Router
                 $controllerName = ucfirst(array_shift($explode) . 'Controller');
                 $actionName = ucfirst(array_shift($explode));
                 $actionName = 'action' . $actionName;
-//                echo $controllerName;
-//                echo '<br/>';
-//                echo $actionName;
-                $controllerFile = $_SERVER['DOCUMENT_ROOT'] . '/src/controllers/' . $controllerName . '.php';
-//                echo $controllerFile;
-
+                $controllerFile = $_SERVER['DOCUMENT_ROOT'] . '/src/Controllers/' . $controllerName . '.php';
                 if (file_exists($controllerFile)){
                     require_once ($controllerFile);
                 }
@@ -57,6 +48,7 @@ class Router
             return true;
         }
         else echo "This page is unavailable!";
+        return true;
     }
 }
 

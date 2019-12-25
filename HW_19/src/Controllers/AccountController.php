@@ -1,11 +1,11 @@
 <?php
-include_once ($_SERVER['DOCUMENT_ROOT'] . '/src/models/Result.php');
+use Models\Result;
 class AccountController
 {
     public function actionLogin()
     {
         $message = Result::getMessage();
-        echo $message;
+        print_r ($message);
         return true;
     }
 }

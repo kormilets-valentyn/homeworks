@@ -1,5 +1,4 @@
 <?php
-namespace src\config\route;
 
 return [
     ''=>'main/index',
