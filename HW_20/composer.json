@@ -1,0 +1,17 @@
+{
+    "name": "v_kormilets/pattern",
+    "authors": [
+        {
+            "name": "valentyn",
+            "email": "v.kormilets@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "": ""
+        }
+    },
+    "require": {
+        "ext-pdo": "*"
+    }
+}

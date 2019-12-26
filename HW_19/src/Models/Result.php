@@ -5,13 +5,7 @@ namespace Models;
      public static function getMessage()
      {
          $a = new Connect();
-         $row = $a->query('SELECT title FROM sparrow where id=1');
-         $result = '';
-         foreach ($row as $value){
-             foreach ($value as $item){
-                 $result .= $item;
-             }
-         }
-         return $result;
+         $row = $a->query('SELECT title FROM sparrow WHERE id=1');
+         print_r($row);
      }
 }

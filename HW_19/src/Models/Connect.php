@@ -24,7 +24,7 @@ class Connect
     {
         $query = $this->link->prepare($sql);
         $query->execute();
-        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+        $result = $query->fetch(PDO::FETCH_COLUMN);
         if ($result === false){
             return $result = [];
         }
