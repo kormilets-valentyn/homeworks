@@ -21,8 +21,8 @@ class Connect {
     {
         $stm = Connect::getInstance()->prepare($example);
         $stm->execute();
-        $stm->fetch(PDO::FETCH_ASSOC);
-        return $stm;
+        $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
     }
 
     private function __wakeup(){}
