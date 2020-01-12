@@ -36,21 +36,15 @@
 
 use database\Connect;
 
+$instance = Connect::getInstance();
+var_dump($instance);
 $example = ('SELECT title,author FROM `books`');
-$stm = Connect::getInstance();
-$stm = Connect::Query($example);
-
-foreach ($stm as $key => $value) {
+$test = $instance->Query($example);
+foreach ($test as $key => $value) {
     echo 'Book: ' . $value['title'] . ' -> Author: ' . $value['author'];
     echo '<br/>';
 }
-//$stm = Connect::getInstance()->prepare($example);
-//$stm->execute();
-//$result = $stm->fetchAll(PDO::FETCH_ASSOC);
-//foreach ($result as $key => $value) {
-//    echo 'Book: ' . $value['title'] . ' -> Author: ' . $value['author'];
-//    echo '<br/>';
-//}
+
 ?>
 
 </body>
